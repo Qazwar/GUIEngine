@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Note:
+ MUI: Language priority, user set > system default > def ID. If default ID isn't set, the first one will be used.
+ 
+ CtrlID: Range from 2000 - 4999. Resource ID from 5000 - 20000
+ 
+ isMain Attribute: Application will exit when main window is closed.
+-->
+<root>
+	<resources>
+		<shared icon="main.ico" basecolor="" fontcolor="255" highlightcolor="" buttoncolor="" buttonhighlight=""/>
+	</resources>
+	<languages defID="1033">
+		<language langID="1033" resFile="enu.xml"/>
+		<language langID="2052" resFile="chs.xml"/>
+	</languages>
+	
+	<window name="mainWindow" width="300" height="300" title="5001">
+		<layout type="basicpanel">
+			<items>
+				<element type="button" name="btn1" ctrlid="2000" text="5001" left="20" top="20" width="100" height="28"/>
+				<element type="button" name="btn2" ctrlid="2001" text="5000" left="60" top="60" width="100" height="28"/>
+			</items>
+		</layout>
+	</window>
+	<window name="mainWindow2" width="800" corner="8" minimize="1" isMain="1" height="500" title="5002">
+		<layout type="basicpanel">
+			<items>
+				<element type="button" name="btn1" ctrlid="2002" text="5000" left="20" top="20" width="100" height="28"/>
+				<element type="button" name="btn2" ctrlid="2003" text="5000" left="60" top="60" width="100" height="48"/>
+				<element type="edit" name="edit" ctrlid="2008" text="5000" left="410" top="40"/>
+				<element type="label" name="btn2" ctrlid="2004" text="5000" left="60" top="120" width="200" height="48"/>
+				<element type="groupbox" name="group1" ctrlid="2009" text="5000" left="20" top="150" width="100" height="38"/>				
+				<element type="slider" name="slider" ctrlid="2006" left="170" top="5" height="15"/>				
+				<element type="listbox" name="listbox" ctrlid="2005" left="170" top="30" width="200"/>				
+				
+				<element type="scrollbar" ctrlid="2010" left="375" top="20" height="200"/>				
+				<element type="scrollbar" ctrlid="2013" left="5" top="240" width="200" orientation="horizontal"/>				
+				<element type="progress" ctrlid="2014" left="10" top="270" value="20"/>				
+				<element type="combobox" ctrlid="2015" left="220" top="240"/>
+				<element type="checkbox" ctrlid="2011" left="360" top="280" text="5000"/>
+				<element type="radio" ctrlid="2016" left="270" top="280" text="5000"/>				
+				<element type="radio" ctrlid="2017" left="270" top="310" text="5000"/>
+			</items>
+		</layout>
+	</window>
+</root>

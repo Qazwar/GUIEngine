@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>GUIEngine</ProjectName>
+    <ProjectGuid>{076DFF61-4420-410F-85F7-82551D06F354}</ProjectGuid>
+    <RootNamespace>KDGUI</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\Include\Common;..\Include\Win32;..\Include\Foto;..\Include\GUIE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GUIE_EXPORTS;KUDEET_USE_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <ProgramDataBaseFileName>$(TargetDir)/vc70.pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\Bin\Debug/Kudeet.GUIEngine.dll</OutputFile>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)/$(ProjectName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>..\Bin\Debug/GUIEngine.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\Include\Common;..\..\Include\Win32;..\..\Include\Foto;..\..\Include\GUIE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;GUIE_EXPORTS;KD_USE_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <ProgramDataBaseFileName>$(TargetDir)/vc70.pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\Bin\Release/Kudeet.GUIEngine.dll</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)/$(ProjectName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>..\Bin\Release/GUIEngine.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="GUIEngine.cpp" />
+    <ClCompile Include="KudGUIBasicPanel.cpp" />
+    <ClCompile Include="KudGUIButton.cpp" />
+    <ClCompile Include="KudGUIComboBox.cpp" />
+    <ClCompile Include="KudGUIEdit.cpp" />
+    <ClCompile Include="KudGUIHyperLink.cpp" />
+    <ClCompile Include="KudGUIListBox.cpp" />
+    <ClCompile Include="KudGUIProgress.cpp" />
+    <ClCompile Include="KudGUIScrollBar.cpp" />
+    <ClCompile Include="KudGUISkin.cpp" />
+    <ClCompile Include="KudGUISlider.cpp" />
+    <ClCompile Include="KudGUIStatic.cpp" />
+    <ClCompile Include="KudResourceMgr.cpp" />
+    <ClCompile Include="KudWin32Wnd.cpp" />
+    <ClCompile Include="KudWin32Wnd_Proc.cpp" />
+    <ClCompile Include="KudElementParser.cpp" />
+    <ClCompile Include="KudLayoutParser.cpp" />
+    <ClCompile Include="KudThemeManager.cpp" />
+    <ClCompile Include="KudValueConverter.cpp" />
+    <ClCompile Include="KudMUIManager.cpp" />
+    <ClCompile Include="tinystr.cpp" />
+    <ClCompile Include="tinyxml.cpp" />
+    <ClCompile Include="tinyxmlerror.cpp" />
+    <ClCompile Include="tinyxmlparser.cpp" />
+    <ClCompile Include="KudGDIRender.cpp" />
+    <ClCompile Include="KudGDIRender_Wnd.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IGUIManagerImpl.h" />
+    <ClInclude Include="IGUIRender.h" />
+    <ClInclude Include="KudGUIBasicPanel.h" />
+    <ClInclude Include="KudGUIButton.h" />
+    <ClInclude Include="KudGUIComboBox.h" />
+    <ClInclude Include="KudGUIEdit.h" />
+    <ClInclude Include="KudGUIHyperLink.h" />
+    <ClInclude Include="KudGUIListBox.h" />
+    <ClInclude Include="KudGUIProgress.h" />
+    <ClInclude Include="KudGUIScrollBar.h" />
+    <ClInclude Include="KudGUISkin.h" />
+    <ClInclude Include="KudGUISlider.h" />
+    <ClInclude Include="KudGUIStatic.h" />
+    <ClInclude Include="KudInternalUIDefines.h" />
+    <ClInclude Include="KudRadioGroupsMgr.h" />
+    <ClInclude Include="KudResourceMgr.h" />
+    <ClInclude Include="KudSharedFunctions.h" />
+    <ClInclude Include="KudWin32Wnd.h" />
+    <ClInclude Include="KudElementParser.h" />
+    <ClInclude Include="KudLayoutParser.h" />
+    <ClInclude Include="KudThemeManager.h" />
+    <ClInclude Include="KudValueConverter.h" />
+    <ClInclude Include="KudLangHelper.h" />
+    <ClInclude Include="KudMUIManager.h" />
+    <ClInclude Include="tinystr.h" />
+    <ClInclude Include="tinyxml.h" />
+    <ClInclude Include="..\Include\Guie\BaseDefines.h" />
+    <ClInclude Include="..\Include\Guie\IEventCracker.h" />
+    <ClInclude Include="..\Include\Guie\IEventHandler.h" />
+    <ClInclude Include="..\Include\Guie\IGUIBasicPanel.h" />
+    <ClInclude Include="..\Include\Guie\IGUIButton.h" />
+    <ClInclude Include="..\Include\Guie\IGUIComboBox.h" />
+    <ClInclude Include="..\Include\Guie\IGUIContextMenu.h" />
+    <ClInclude Include="..\Include\Guie\IGUIEditBox.h" />
+    <ClInclude Include="..\Include\Guie\IGUIElement.h" />
+    <ClInclude Include="..\Include\Guie\IGUIHyperLink.h" />
+    <ClInclude Include="..\Include\Guie\IGUIImage.h" />
+    <ClInclude Include="..\Include\Guie\IGUIListBox.h" />
+    <ClInclude Include="..\Include\Guie\IGUIListView.h" />
+    <ClInclude Include="..\Include\Guie\IGUIManager.h" />
+    <ClInclude Include="..\Include\Guie\IGUIMenu.h" />
+    <ClInclude Include="..\Include\Guie\IGUIProgress.h" />
+    <ClInclude Include="..\Include\Guie\IGUIScrollBar.h" />
+    <ClInclude Include="..\Include\Guie\IGUISlider.h" />
+    <ClInclude Include="..\Include\Guie\IGUIStatic.h" />
+    <ClInclude Include="..\Include\Guie\IGUITabControl.h" />
+    <ClInclude Include="..\Include\Guie\IGUITexture.h" />
+    <ClInclude Include="..\Include\Guie\IGUIToolBar.h" />
+    <ClInclude Include="..\Include\Guie\IGUITreeView.h" />
+    <ClInclude Include="..\Include\Guie\IGUIWindow.h" />
+    <ClInclude Include="..\Include\Guie\IMUIManager.h" />
+    <ClInclude Include="..\Include\Guie\IReferencePtr.h" />
+    <ClInclude Include="..\Include\Guie\KudKeyCodes.h" />
+    <ClInclude Include="..\Include\Guie\KudUIConsts.h" />
+    <ClInclude Include="..\Include\Guie\KudUIDefines.h" />
+    <ClInclude Include="..\Include\Guie\KudUIEnums.h" />
+    <ClInclude Include="..\Include\Guie\PublicHeaders.h" />
+    <ClInclude Include="KudGDIRender.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Design.txt" />
+    <None Include="TODOLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GUIEngine.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

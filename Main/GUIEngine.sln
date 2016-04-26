@@ -1,0 +1,38 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GUIEngine", "GUIEngine\GUIEngine71.vcproj", "{076DFF61-4420-410F-85F7-82551D06F354}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GUIEditor", "GUIEditor\GUIEditor.vcproj", "{2F4FB2A0-277D-49E0-95D3-27420FBF39EF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{076DFF61-4420-410F-85F7-82551D06F354} = {076DFF61-4420-410F-85F7-82551D06F354}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KDVP", "KDVP\KDVP.vcproj", "{2F4FB2A0-277D-49E0-95D3-27420FBF39EF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{076DFF61-4420-410F-85F7-82551D06F354}.Debug.ActiveCfg = Debug|Win32
+		{076DFF61-4420-410F-85F7-82551D06F354}.Debug.Build.0 = Debug|Win32
+		{076DFF61-4420-410F-85F7-82551D06F354}.Release.ActiveCfg = Release|Win32
+		{076DFF61-4420-410F-85F7-82551D06F354}.Release.Build.0 = Release|Win32
+		{2F4FB2A0-277D-49E0-95D3-27420FBF39EF}.Debug.ActiveCfg = Debug|Win32
+		{2F4FB2A0-277D-49E0-95D3-27420FBF39EF}.Debug.Build.0 = Debug|Win32
+		{2F4FB2A0-277D-49E0-95D3-27420FBF39EF}.Release.ActiveCfg = Release|Win32
+		{2F4FB2A0-277D-49E0-95D3-27420FBF39EF}.Release.Build.0 = Release|Win32
+		{2F4FB2A0-277D-49E0-95D3-27420FBF39EF}.Debug.ActiveCfg = Debug|Win32
+		{2F4FB2A0-277D-49E0-95D3-27420FBF39EF}.Debug.Build.0 = Debug|Win32
+		{2F4FB2A0-277D-49E0-95D3-27420FBF39EF}.Release.ActiveCfg = Release|Win32
+		{2F4FB2A0-277D-49E0-95D3-27420FBF39EF}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,19 @@
+TODO: List.
+
+1. Hanlde WM_DEACTIVE / ACTIVE Message to make sure the element state is updated correctly ( like HyperLink. )
+
+TODO..
+实现控件的SetCapture/ReleaseCapture功能....
+
+1. Image... GroupBox... CheckBox... RadioButton
+2. ComboBox depends ===> ListBox ===> ScrollBar
+
+重构GUIENGINE：
+1. 改进LAYOUT元素的分析和创建, 使得用户可以注册自己的控件类型以实现自定义效果. 元素的Attributes解析也由外部的对象自己提供.
+
+2. 用DIRECT3D作为RENDER时，同时显示2个窗口是否需要都分别创建D3D对象，为不同的窗口HWND做初始化
+
+
+问题：
+1、Layout加载窗口完成后，并用ShowWindow显示，关闭窗口，若需要再次显示窗口，则Layout必须能重新再次的解析加载窗口原始.
+2、ShowModal的支持 （添加WS_EX_TOOLWINDOW）解决

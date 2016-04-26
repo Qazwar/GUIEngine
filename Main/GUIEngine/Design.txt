@@ -1,0 +1,61 @@
+Kudeet GUIEngine Desin.
+
+It includes the following main part:
+1. Event rout method, from Windows message to child element, and send the GUI event back to parent or user handlers.
+2. Layout parser. read XML to load Window and its content.
+3. Drawing method, we need to make sure the drawing is high performance.
+
+Issues:
+1. How to map the control from name (defined in XML file) to event handler ID.
+2. Transparent drawing, support from PNG, or only support bitmap with transparent color key.
+
+
+A. Resource
+
+<?xml version="1.0" encoding="utf-8"?>
+<resroot>
+	<resource ID="1" Name="btnMin" File="btnMin.png" state="none"/>
+</resroot>
+
+B. Layout
+
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<window name="mainWindow" width="300" height="300" title="Kudeet示例一">
+		<layout type="basicpanel">
+			<items>
+				<element type="button" name="btn1" ctrlid="2000" text="ok11" left="20" top="20" width="100" height="28"/>
+				<element type="button" name="btn2" ctrlid="2001" text="ok22" left="60" top="60" width="100" height="28"/>
+			</items>
+		</layout>
+	</window>
+	<window name="mainWindow2" width="500" height="300" title="Kudeet示例二">
+		<layout type="basicpanel">
+			<items>
+				<element type="button" name="btn1" ctrlid="2002" text="ok33" left="20" top="20" width="100" height="28"/>
+				<element type="button" name="btn2" ctrlid="2003" text="ok44" left="60" top="60" width="100" height="48"/>
+				<element type="static" name="btn2" ctrlid="2004" text="hello, label" left="60" top="120" width="200" height="48"/>
+			</items>
+		</layout>
+	</window>
+</root>
+
+1). 每个XML文件的ROOT可以包含多个Window元素. LAYOUT加载后根据Window的名称或者ID来获取单独的窗口对象
+2). 每个XML文件可以包含一个Common节点，其内可以定义一些该XML供应的数据属性和元素(可以在后面引用)
+3). 每个Window中的元素的大小是由外向里计算....
+4). 每个元素的大小优先级： 本地值 > 可用值
+
+I). 窗口的解析过程：
+A. =>	获取每个窗口结点，读取其PUBLIC和SPECIAL属性，然后创建窗口HWND，过程也检测<window>---<layout>---<items>的层次关系	(ParseWindow)
+		// 注意WINDOW的子结点只能是LAYOUT类型的一个 (UpdateHoveredElement方法).....
+B. => 解析窗口内容. 窗口的唯一子结点只能是<layout>，然后解析layout的类型和其PUBLIC属性（ParseLayout）。		(ParseWindowContent)
+C. => 解析<layout>的子结点，可以是<layout>/<element>, 中间通过迭代完成解析操作。
+
+====PUSH, RADIO, CHECK三种按钮仍然通过type值进行区别处理. 但是内部，我们只通过IGUIButton对象进行操作来处理.
+
+C. Architecture
+
+1). 消息部分借于WTL的消息宏和机制.
+
+引擎的绘制：窗口内中设置基本的HPEN对象(Base Color)
+
